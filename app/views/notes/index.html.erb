@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= link_to "New note", new_note_path %>
+
+<div id="notes" class="grid grid-cols-3 gap-4">
+  <% @notes.each do |note| %>
+    <%= render note %>
+  <% end %>
+</div>
+
