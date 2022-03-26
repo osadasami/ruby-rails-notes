@@ -2,7 +2,7 @@
 
 <%= link_to "New note", new_note_path %>
 
-<div id="notes" class="grid grid-cols-3 gap-4">
+<div id="notes" class="grid md:grid-cols-3 gap-4">
   <% @notes.each do |note| %>
     <%= render note %>
   <% end %>
