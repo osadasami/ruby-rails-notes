@@ -10,4 +10,5 @@
 	font-family: monospace;
 	overflow: auto;
 	white-space: pre;
+	tab-size: 2;
 }
