@@ -4,6 +4,10 @@ import CodeMirror from 'codemirror'
 // Connects to data-controller="codemirror"
 export default class extends Controller {
   connect() {
-    CodeMirror.fromTextArea(this.element)
+    const editor = CodeMirror.fromTextArea(this.element)
+
+    editor.on('blur', () => {
+      this.dispatch('blur', {target: document})
+    })
   }
 }

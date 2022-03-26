@@ -9,3 +9,6 @@ application.register("codemirror", CodemirrorController)
 
 import HelloController from "./hello_controller.js"
 application.register("hello", HelloController)
+
+import NoteController from "./note_controller.js"
+application.register("note", NoteController)

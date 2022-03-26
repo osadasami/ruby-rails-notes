@@ -69,3 +69,9 @@ end
 
 
 gem "faker", "~> 2.20"
+
+gem "github-markup", "~> 4.0"
+
+gem "commonmarker", "~> 0.23.4"
+
+gem "commonmarker-rouge", "~> 1.5"

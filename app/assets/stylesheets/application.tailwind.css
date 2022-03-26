@@ -1,4 +1,12 @@
 @import "codemirror/lib/codemirror.css";
+@import "./one-dark.css";
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
+
+.highlighter-rouge {
+	padding: 20px;
+	font-family: monospace;
+	overflow: auto;
+	white-space: pre;
+}
