@@ -11,6 +11,14 @@
   </head>
 
   <body class="bg-gray-50 p-16">
+    <% tags = Tag.all %>
+    <ul>
+      <% tags.each do |tag| %>
+        <li>
+          <%= tag.name %>
+        </li>
+      <% end %>
+    </ul>
     <%= yield %>
   </body>
 </html>
