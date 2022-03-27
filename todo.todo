@@ -1,1 +1,8 @@
- ☐ Save note on blur
+ ☐ On input save note to localstorage and debounce saving to server. On page load save localstorage to db
+ ☐ Save note to localStorage
+ ☐ Save note to server from localstorage with debounce
+   ☐ On edit
+   ☐ On first load
+ ☐ Edit note on click on index page
+ ☐ Preview note on blur on index page
+ ☐ Alway edit note on note page

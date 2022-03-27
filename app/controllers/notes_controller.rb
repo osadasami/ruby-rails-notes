@@ -1,9 +1,11 @@
 class NotesController < ApplicationController
+  include ActionView::RecordIdentifier
+
   before_action :set_note, only: %i[ show edit update destroy ]
 
   # GET /notes or /notes.json
   def index
-    @notes = Note.all
+    @notes = Note.order(created_at: :desc )
   end
 
   # GET /notes/1 or /notes/1.json
@@ -21,11 +23,14 @@ class NotesController < ApplicationController
 
   # POST /notes or /notes.json
   def create
-    @note = Note.new(note_params)
+    @note = Note.create(content: '')
 
     respond_to do |format|
       if @note.save
         format.html { redirect_to note_url(@note), notice: "Note was successfully created." }
+        format.turbo_stream do
+          render turbo_stream: turbo_stream.prepend(:notes, @note)
+        end
         format.json { render :show, status: :created, location: @note }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -53,6 +58,9 @@ class NotesController < ApplicationController
 
     respond_to do |format|
       format.html { redirect_to notes_url, notice: "Note was successfully destroyed." }
+      format.turbo_stream do
+        render turbo_stream: turbo_stream.remove(dom_id(@note))
+      end
       format.json { head :no_content }
     end
   end

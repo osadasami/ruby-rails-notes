@@ -1,6 +1,9 @@
 <%= turbo_frame_tag dom_id(note) do %>
   <div class="p-4 border rounded bg-white">
-    <%= link_to 'Edit', edit_note_path(note), class: '' %>
+    <div class="flex space-x-4">
+      <%= link_to 'Edit', edit_note_path(note) %>
+      <%= button_to 'Delete', note_path(note), method: :delete %>
+    </div>
     
     <div class="prose prose-sm">
       <%= note.md %>

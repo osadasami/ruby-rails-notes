@@ -1,6 +1,6 @@
 <p style="color: green"><%= notice %></p>
 
-<%= link_to "New note", new_note_path %>
+<%= button_to "New note", notes_path, method: :post %>
 
 <div id="notes" class="grid md:grid-cols-3 gap-4">
   <% @notes.each do |note| %>

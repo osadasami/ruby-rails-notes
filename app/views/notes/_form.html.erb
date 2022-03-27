@@ -1,5 +1,7 @@
-<div data-controller="note" data-action="codemirror:blur@document->note#save">
+<div>
   <%= form_with(model: note) do |form| %>
+    <%= form.submit class: 'p-2 bg-white border rounded mb-4 cursor-pointer' %>
+
     <% if note.errors.any? %>
       <div style="color: red">
         <h2><%= pluralize(note.errors.count, "error") %> prohibited this note from being saved:</h2>
@@ -15,7 +17,5 @@
     <div>
       <%= form.text_area :content, class: 'w-full p-4 resize-none', data: {controller: 'codemirror'} %>
     </div>
-
-    <%= form.submit class: 'hidden', data: {note_target: 'submit'} %>
   <% end %>
 </div>

@@ -16,11 +16,18 @@ export default class extends Controller {
     })
 
     editor.on('blur', () => {
-      this.dispatch('blur', {target: document})
+      this.dispatch('blur', {
+        target: document
+      })
     })
 
     editor.on('change', (editor) => {
-      console.log(editor.getValue())
+      this.dispatch('change', {
+        target: document,
+        detail: {
+          content: editor.getValue()
+        }
+      })
     })
   }
 }
