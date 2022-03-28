@@ -25,14 +25,24 @@ class Tag < ApplicationRecord
 		end
 	end
 
-	def self.build_tree(tag, item)
-		name, tag = tag.gsub('#', '').split('/', 2)
+	def self.tree
+		tree = {}
+		self.all.each { |tag| Tag.build_tree(tag.name, tree) }
+		tree
+	end
 
-		item[name]||= {}
-		item[name] = nil unless tag
+	def self.build_tree(tag, item, parent = nil)
+		head, tail = tag.split('/', 2)
+		name = head.gsub('#', '')
+		path = parent ? "#{parent}/#{head}" : head
 
-		if tag
-			build_tree(tag, item[name])
+		item[name]||= {
+			path: path,
+			children: {},
+		}
+
+		if tail
+			build_tree(tail, item[name][:children], path)
 		end
 	end
 end

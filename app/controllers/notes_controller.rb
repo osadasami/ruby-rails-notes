@@ -5,7 +5,11 @@ class NotesController < ApplicationController
 
   # GET /notes or /notes.json
   def index
-    @notes = Note.order(created_at: :desc )
+    if params[:tags]
+      @notes = Note.by_tags(params[:tags])
+    else
+      @notes = Note.order(created_at: :desc )
+    end
   end
 
   # GET /notes/1 or /notes/1.json

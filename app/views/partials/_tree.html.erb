@@ -1,11 +1,9 @@
 <ul class="ml-4 list-disc">
 	<% tree.keys.each do |key| %>
 		<li>
-			<%= key %>
+			<%= link_to key, root_path(params.permit(tags: {include: [], exclude: []})) %>
 
-			<% if tree[key] && tree[key].keys %>
-				<%= render partial: 'partials/tree', locals: {tree: tree[key]} %>
-			<% end %>
+			<%= render partial: 'partials/tree', locals: {tree: tree[key][:children]} %>
 		</li>
 	<% end %>
 </ul>
