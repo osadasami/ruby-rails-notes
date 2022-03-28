@@ -10,15 +10,17 @@
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
   </head>
 
-  <body class="bg-gray-50 p-16">
-    <% tags = Tag.all %>
-    <ul>
-      <% tags.each do |tag| %>
-        <li>
-          <%= tag.name %>
-        </li>
-      <% end %>
-    </ul>
-    <%= yield %>
+  <body class="bg-gray-50 p-4 grid grid-cols-4">
+    <div class="col-span-1">
+      <%
+        tags = Tag.all
+        tree = {}
+        tags.each { |tag| Tag.build_tree(tag.name, tree) }
+      %>
+      <%= render partial: 'partials/tree', locals: {tree: tree} %>
+    </div>
+    <div class="col-span-3">
+      <%= yield %>
+    </div>
   </body>
 </html>

@@ -1,0 +1,11 @@
+<ul class="ml-4 list-disc">
+	<% tree.keys.each do |key| %>
+		<li>
+			<%= key %>
+
+			<% if tree[key] && tree[key].keys %>
+				<%= render partial: 'partials/tree', locals: {tree: tree[key]} %>
+			<% end %>
+		</li>
+	<% end %>
+</ul>

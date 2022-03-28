@@ -24,4 +24,15 @@ class Tag < ApplicationRecord
 			old_tag.destroy if old_tag.notes.empty?
 		end
 	end
+
+	def self.build_tree(tag, item)
+		name, tag = tag.gsub('#', '').split('/', 2)
+
+		item[name]||= {}
+		item[name] = nil unless tag
+
+		if tag
+			build_tree(tag, item[name])
+		end
+	end
 end
