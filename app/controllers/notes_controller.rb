@@ -6,7 +6,7 @@ class NotesController < ApplicationController
   # GET /notes or /notes.json
   def index
     if params[:tags]
-      @notes = Note.by_tags(params[:tags])
+      @notes = Note.by_tags(tag_params)
     else
       @notes = Note.order(created_at: :desc )
     end
@@ -80,5 +80,9 @@ class NotesController < ApplicationController
     # Only allow a list of trusted parameters through.
     def note_params
       params.require(:note).permit(:content)
+    end
+
+    def tag_params
+      params.require(:tags).permit(include: [], exclude: [])
     end
 end
