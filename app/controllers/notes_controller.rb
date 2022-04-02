@@ -60,6 +60,8 @@ class NotesController < ApplicationController
 
   # DELETE /notes/1 or /notes/1.json
   def destroy
+    @note.content = ''
+    Tag.sync(@note)
     @note.destroy
 
     respond_to do |format|

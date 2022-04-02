@@ -16,7 +16,7 @@ class Tag < ApplicationRecord
 		# отцепить все теги
 		note.tags.delete_all
 
-		# прицепить новые тиг
+		# прицепить новые теги
 		note.tags.concat(new_tags)
 
 		# удалить старые теги если они не сцеплины ни с одной заметкой 
