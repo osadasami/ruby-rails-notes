@@ -2,7 +2,7 @@ class Note < ApplicationRecord
   has_and_belongs_to_many :tags
 
   def html
-    CommonMarker::Rouge.render_html(self.content).html_safe
+    CommonMarker::Rouge.render_doc(self.content, :DEFAULT, [:autolink]).to_html.html_safe
   end
 
   def self.by_tags(tags)
