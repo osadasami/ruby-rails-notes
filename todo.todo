@@ -1,5 +1,12 @@
- ☐ Добавить Undo чтобы можно было восстановить заметку если случайно удалил
- ☐ Добавить suggestions когда ввожу существующий тег в codemirror
- ☐ Обновлять sidebar с тегами при обновлении заметок
- ☐ Добавить поиск для тегов
- ☐ Сохранять контент заметки в localStorage до сохранения его в базу. После сохранения в базу, удалять из localStorage
+☐ Добавить suggestions когда ввожу существующий тег в codemirror
+  https://codepen.io/_kkeisuke/pen/BJGpqG?editors=1010
+  https://stackoverflow.com/questions/36652847/codemirror-custom-hint-list-not-working-properly
+  https://www.google.com/search?q=codemirror+custom+hint&ei=pDZNYsv3O-fIrgTUoYKYBw&ved=0ahUKEwjL2bv46v72AhVnpIsKHdSQAHMQ4dUDCA0&uact=5&oq=codemirror+custom+hint&gs_lcp=Cgdnd3Mtd2l6- EAMyBAgAEBMyBggAEB4QEzIGCAAQHhATOgcIABBHELADOgYIABAHEB46CAgAEAgQBxAeSgQIQRgASgQIRhgAUL8DWLwIYJ4KaAJwAXgAgAF5iAGnBZIBAzAuNpgBAKABAcgBCMABAQ&sclient=gws-wiz
+  https://www.youtube.com/watch?v=4xD2ViRZnMY
+  https://github.com/samdark/codemirror-autosuggest
+☐ Добавить Undo чтобы можно было восстановить заметку если случайно удалил
+☐ Обновлять sidebar с тегами при обновлении заметок
+☐ Добавить поиск для тегов
+☐ Сохранять контент заметки в localStorage до сохранения его в базу. После сохранения в базу, удалять из localStorage
+☐ Фильтровать теги в sidebar на основе тегов в выбранных заметках
+☐ Masonry grid
